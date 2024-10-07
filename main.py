@@ -45,7 +45,7 @@ L2.markdown("""
 """)
 
 L3.markdown("""
-* Coming soon
+* *[Universal Ratio Trend Matrix](https://www.tradingview.com/script/ZCHt0ScM-Universal-Ratio-Trend-Matrix-InvestorUnknown/)*
 """)
 
 ot.markdown("""
