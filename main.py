@@ -42,6 +42,9 @@ L2.markdown("""
 * *[Median Kijun-Sen](https://www.tradingview.com/script/EjXXXaVk-Median-Kijun-Sen-InvestorUnknown/)*
 * *[Hyperbolic Tangent SuperTrend](https://www.tradingview.com/script/nQHyS5XK-Hyperbolic-Tangent-SuperTrend-InvestorUnknown/)*
 * *[Hyperbolic Tangent Volatility Stop](https://www.tradingview.com/script/yM7yGIJ0-Hyperbolic-Tangent-Volatility-Stop-InvestorUnknown/)*
+* *[Sine-Weighted MA ATR](https://www.tradingview.com/script/Ku1jOXK0-Sine-Weighted-MA-ATR-InvestorUnknown/)*
+* *[Cosine-Weighted MA ATR](https://www.tradingview.com/script/HIsr34CV-Cosine-Weighted-MA-ATR-InvestorUnknown/)*
+* *[RSI Weighted Trend System I](https://www.tradingview.com/script/oAlwjKtM-RSI-Weighted-Trend-System-I-InvestorUnknown/)*
 """)
 
 L3.markdown("""
