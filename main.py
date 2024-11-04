@@ -45,6 +45,8 @@ L2.markdown("""
 * *[Sine-Weighted MA ATR](https://www.tradingview.com/script/Ku1jOXK0-Sine-Weighted-MA-ATR-InvestorUnknown/)*
 * *[Cosine-Weighted MA ATR](https://www.tradingview.com/script/HIsr34CV-Cosine-Weighted-MA-ATR-InvestorUnknown/)*
 * *[RSI Weighted Trend System I](https://www.tradingview.com/script/oAlwjKtM-RSI-Weighted-Trend-System-I-InvestorUnknown/)*
+* *[Z-Score Weighted Trend System I](https://www.tradingview.com/script/jKvaojB0-Z-Score-Weighted-Trend-System-I-InvestorUnknown/)*
+* *[RBF Kijun Trend System](https://www.tradingview.com/script/KLKOA9hY-RBF-Kijun-Trend-System-InvestorUnknown/)*
 """)
 
 L3.markdown("""
