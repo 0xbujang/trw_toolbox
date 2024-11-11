@@ -47,6 +47,7 @@ L2.markdown("""
 * *[RSI Weighted Trend System I](https://www.tradingview.com/script/oAlwjKtM-RSI-Weighted-Trend-System-I-InvestorUnknown/)*
 * *[Z-Score Weighted Trend System I](https://www.tradingview.com/script/jKvaojB0-Z-Score-Weighted-Trend-System-I-InvestorUnknown/)*
 * *[RBF Kijun Trend System](https://www.tradingview.com/script/KLKOA9hY-RBF-Kijun-Trend-System-InvestorUnknown/)*
+* *[TrigWave Suite](https://www.tradingview.com/script/V8FTemnA-TrigWave-Suite-InvestorUnknown/)* 
 """)
 
 L3.markdown("""
