@@ -7,7 +7,10 @@ import requests
 
 
 # Layout
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title = "TPI Backtest",
+    layout = "wide"
+)
 
 ### FUNCTIONS ###
 @st.cache_data(ttl=600)
@@ -204,6 +207,13 @@ def display_metric_explanations():
 
 # Title of the dashboard
 st.title('Backtesting Tool - under construction')
+
+col1, col2, col3, = st.columns([3,2,3])
+
+with col2:
+    with st.expander("How to Perform TPI Backtest"):
+        st.write("Coming soon...")
+    
 
 # Input for the sheet name
 sheet_name = "R1"
