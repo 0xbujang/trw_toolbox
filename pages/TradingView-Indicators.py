@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title = "TV Indicators"
+    page_title = "TV Indicators",
     layout = "wide"
 )
 
