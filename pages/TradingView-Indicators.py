@@ -1,6 +1,9 @@
 import streamlit as st
 
-st.set_page_config(layout = "wide")
+st.set_page_config(
+    page_title = "TV Indicators"
+    layout = "wide"
+)
 
 st.title(":hammer_and_wrench: Andrej S. | InvestorUnknown's Toolbox :hammer_and_wrench:")
 
