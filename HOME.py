@@ -9,11 +9,12 @@ def set_background():
         </style>
         """, unsafe_allow_html=True)
 
-set_background()
-
 st.set_page_config(
-    page_title = "Home"
+    page_title = "Home",
+    layout = "wide"
 )
+
+set_background()
 
 st.title("Main Page")
 st.sidebar.success("Select a page above")
