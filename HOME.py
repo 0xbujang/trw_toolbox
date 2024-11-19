@@ -26,4 +26,19 @@ Main Page</h1>
 
 st.markdown("---")
 
+set_background()
+
+st.markdown(
+"""
+<p style='text-align: center; color: white;'>
+Welcome to the TheRealWorld Cryptocurrency Investing Campus Toolbox.
+
+This App is developed and maintained by Andrej S. | 𝓘𝓜𝓒 𝓖𝓾𝓲𝓭𝓮 (01GJBE2DBX7ACHTWS7YSHEFZEW)
+</p>
+"""
+    , unsafe_allow_html=True
+)
+
+
+
 st.sidebar.success("Select a page above")
