@@ -55,9 +55,6 @@ st.set_page_config(
 # create_header()
 set_background()
 
-# Separator
-st.write("---")
-
 # Subtitle for the Crypto Breadth section
 st.markdown("<h1 style='text-align: center; color: white;'>Crypto Breadth</h1>", unsafe_allow_html=True)
 
