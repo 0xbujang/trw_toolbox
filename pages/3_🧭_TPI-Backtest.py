@@ -216,7 +216,8 @@ def display_metric_explanations():
 ### FUNCTIONS ###
 
 # Title of the dashboard
-st.title('Backtesting Tool - under construction')
+st.markdown("<h1 style='text-align: center; color: white;'>Backtesting Tool - under construction</h1>", unsafe_allow_html=True)
+
 
 col1, col2, col3, = st.columns([3,2,3])
 
