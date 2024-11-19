@@ -31,15 +31,16 @@ set_background()
 st.markdown(
 """
 <p style='text-align: center; color: white;'>
-Welcome to the The Real World Cryptocurrency Investing Campus Toolbox.
+Welcome to The Real World Cryptocurrency Investing Campus Toolbox.
 <br>
 <br>
-This App is developed and maintained by Andrej S. | 𝓘𝓜𝓒 𝓖𝓾𝓲𝓭𝓮 (01GJBE2DBX7ACHTWS7YSHEFZEW)
+This app is developed and maintained by Andrej S. | 𝓘𝓜𝓒 𝓖𝓾𝓲𝓭𝓮 (01GJBE2DBX7ACHTWS7YSHEFZEW)
+<br>
+<br>
+Any student of TRW is welcome to use anything they find useful, but this app is primarily built for IMC graduates.
 </p>
 """
     , unsafe_allow_html=True
 )
-
-
 
 st.sidebar.success("Select a page above")
