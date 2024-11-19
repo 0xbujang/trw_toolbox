@@ -31,14 +31,14 @@ import pandas as pd
 #         </div>
 #         """, unsafe_allow_html=True)
 
-# def set_background():
-#     st.markdown("""
-#         <style>
-#         .stApp {
-#             background-color: #1D2B3A;
-#         }
-#         </style>
-#         """, unsafe_allow_html=True)
+def set_background():
+    st.markdown("""
+        <style>
+        .stApp {
+            background-color: #1D2B3A;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 
 @st.cache_data(ttl=600)
 def get_data(sheet_name):
@@ -53,7 +53,7 @@ st.set_page_config(
   page_title = "Crypto Breadth"
 )
 # create_header()
-# set_background()
+set_background()
 
 # Separator
 st.write("---")
