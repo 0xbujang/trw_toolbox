@@ -32,7 +32,7 @@ st.markdown(
 """
 <p style='text-align: center; color: white;'>
 Welcome to the TheRealWorld Cryptocurrency Investing Campus Toolbox.
-
+<br>
 This App is developed and maintained by Andrej S. | 𝓘𝓜𝓒 𝓖𝓾𝓲𝓭𝓮 (01GJBE2DBX7ACHTWS7YSHEFZEW)
 </p>
 """
