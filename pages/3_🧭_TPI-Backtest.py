@@ -6,11 +6,21 @@ import plotly.graph_objects as go
 import requests
 
 
+def set_background():
+    st.markdown("""
+        <style>
+        .stApp {
+            background-color: #1D2B3A;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
 # Layout
 st.set_page_config(
     page_title = "TPI Backtest",
     layout = "wide"
 )
+set_background()
 
 ### FUNCTIONS ###
 @st.cache_data(ttl=600)
