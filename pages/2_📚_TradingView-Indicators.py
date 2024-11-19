@@ -5,6 +5,17 @@ st.set_page_config(
     layout = "wide"
 )
 
+def set_background():
+    st.markdown("""
+        <style>
+        .stApp {
+            background-color: #1D2B3A;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
+set_background()
+
 st.title(":hammer_and_wrench: Andrej S. | InvestorUnknown's Toolbox :hammer_and_wrench:")
 
 st.write("---")
