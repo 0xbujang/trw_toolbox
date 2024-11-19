@@ -219,6 +219,10 @@ def display_metric_explanations():
 st.markdown("<h1 style='text-align: center; color: white;'>Backtesting Tool - under construction</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
+st.markdown("<p style='text-align: center; color: white;'>No coding required! A TPI Backtester for students who don't know how to code but want to evaluate the quality of their TPIs.</p>", unsafe_allow_html=True)
+
+st.markdown("---")
+
 col1, col2, col3, = st.columns([3,2,3])
 
 with col2:
