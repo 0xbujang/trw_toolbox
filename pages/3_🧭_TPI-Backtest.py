@@ -32,10 +32,11 @@ def get_data_1(sheet_name, print_data):
 
 
 @st.cache_data(ttl=600)
-def calculate_equities(daily_returns, tpi_data):
+def calculate_equities(daily_returns, tpi_data, long_threshold, short_threshold):
     """Calculate strategy and buy-and-hold equities based on daily returns and TPI signals."""
     strategy_equity = [1]  # Starting equity for strategy
     buy_and_hold_equity = [1]  # Starting equity for buy-and-hold
+    long_only_equity = [1]
 
     # Calculate the equity based on signals in 'tpi' column
     for i, signal in enumerate(tpi_data):
@@ -43,12 +44,15 @@ def calculate_equities(daily_returns, tpi_data):
             daily_return = daily_returns[i]
 
             # Strategy equity update based on 'tpi' signal
-            if signal > 0:
+            if signal > long_threshold:
                 strategy_equity.append(strategy_equity[-1] * (1 + daily_return))  # Long
-            elif signal < 0:
+                long_only_equity.append(long_only_equity[-1] * (1 + daily_return))
+            elif signal < short_threshold:
                 strategy_equity.append(strategy_equity[-1] * (1 - daily_return))  # Short
+                long_only_equity.append(long_only_equity[-1])
             else:
                 strategy_equity.append(strategy_equity[-1])  # Neutral/cash
+                long_only_equity.append(long_only_equity[-1])
 
             # Buy-and-hold equity (always long)
             buy_and_hold_equity.append(buy_and_hold_equity[-1] * (1 + daily_return))
@@ -56,8 +60,9 @@ def calculate_equities(daily_returns, tpi_data):
             # If daily returns data is shorter than tpi data
             strategy_equity.append(strategy_equity[-1])
             buy_and_hold_equity.append(buy_and_hold_equity[-1])
+            long_only_equity.append(buy_and_hold_equity[-1])
 
-    return strategy_equity, buy_and_hold_equity
+    return strategy_equity, buy_and_hold_equity, long_only_equity
 
 def calculate_metrics(indexed_equity, benchmark_equity=None, risk_free_rate=0.0):
     equity = np.array(indexed_equity)
@@ -186,26 +191,27 @@ def display_metric_explanations():
     ]
 
     definitions = [
-        "Measures risk-adjusted return using total volatility.",
-        "Measures risk-adjusted return, focusing on downside volatility.",
-        "Ratio of gains to losses above a threshold.",
-        "Excess return of the strategy compared to the benchmark after adjusting for beta.",
-        "Measures sensitivity of strategy returns to benchmark returns.",
-        "Measures excess return per unit of tracking error (strategy's deviation from the benchmark).",
-        "Annualized return divided by maximum drawdown, focusing on risk-adjusted return.",
-        "Difference between the strategy's annualized return and the benchmark's annualized return.",
-        "Volatility of the difference between strategy and benchmark returns.",
-        "Average daily return of the strategy.",
-        "Volatility of daily returns.",
-        "Asymmetry in the distribution of returns.",
-        "Measures the tail risk of the returns distribution.",
-        "Largest peak-to-trough decline in equity.",
-        "Compound annual growth rate of the strategy.",
-        "Average of all positive daily returns.",
-        "Volatility of positive daily returns.",
-        "Average of all negative daily returns.",
-        "Volatility of negative daily returns.",
+        "Evaluates the risk-adjusted performance of a strategy by dividing its excess return over a risk-free rate by the total standard deviation of returns. A higher Sharpe Ratio indicates better risk-adjusted returns. Interpretation: Higher is better.",
+        "Focuses on the risk-adjusted performance of a strategy by considering only downside deviation (returns below a specified threshold or target rate). It penalizes strategies more heavily for negative returns. Interpretation: Higher is better.",
+        "Compares the probability-weighted ratio of gains versus losses, above and below a specified threshold. It reflects the strategy's potential for gains relative to its risk of losses. Interpretation: Higher is better.",
+        "Represents the strategy's excess return over the benchmark after accounting for systematic risk (beta). It quantifies the added value of active management. Interpretation: Higher is better.",
+        "Measures the sensitivity of a strategy's returns to movements in the benchmark index. A beta of 1 indicates that the strategy moves in line with the benchmark, while values above or below 1 show higher or lower sensitivity, respectively. Interpretation: A beta closer to 1 is generally better for reducing market-specific risks.",
+        "Assesses the efficiency of a strategy in delivering excess returns relative to its tracking error. A higher ratio indicates better performance for the level of active risk taken. Interpretation: Higher is better.",
+        "Calculates the risk-adjusted return of a strategy by dividing the annualized return by the maximum drawdown, emphasizing performance in the context of historical drawdowns. Interpretation: Higher is better.",
+        "The difference between the strategy's annualized return and the benchmark's annualized return, representing the added return generated by the strategy. Interpretation: Higher is better.",
+        "The standard deviation of the return differences between the strategy and the benchmark, reflecting how much the strategy deviates from the benchmark. Interpretation: Lower is better for tracking error as it indicates more consistent alignment with the benchmark.",
+        "Represents the average return generated by the strategy on a daily basis. It serves as a simple measure of daily performance. Interpretation: Higher is better.",
+        "Indicates the daily volatility of returns, capturing the level of fluctuation in the strategy's performance. Interpretation: Lower is better for reduced risk and steadier performance.",
+        "Describes the asymmetry in the distribution of returns. Positive skewness indicates a longer tail on the right (higher gains), while negative skewness reflects a longer tail on the left (higher losses). Interpretation: Higher is generally better as it suggests higher upside potential.",
+        "Measures the tendency of return distributions to have tails heavier or lighter than the normal distribution. High excess kurtosis suggests a higher probability of extreme outcomes. Interpretation: Lower is better as it indicates fewer extreme risk events.",
+        "The largest peak-to-trough decline in the strategy's equity during a specific time period. It highlights the worst-case loss scenario. Interpretation: Lower is better as it indicates less severe losses.",
+        "The compounded annual rate of growth of the strategy over a specified time horizon. It accounts for the impact of reinvestment and is a key performance measure for long-term investments. Interpretation: Higher is better.",
+        "The average of all daily returns that are positive, providing insight into the magnitude of gains during up days. Interpretation: Higher is better.",
+        "The standard deviation of positive daily returns, capturing the volatility of gains when the strategy performs positively. Interpretation: Lower is better for more consistent positive returns.",
+        "The average of all daily returns that are negative, reflecting the severity of losses during down days. Interpretation: Higher (less negative) is better as it indicates less severe losses.",
+        "The standard deviation of negative daily returns, indicating the variability in losses during unfavorable performance periods. Interpretation: Lower is better as it shows more consistent losses and reduced risk.",
     ]
+
 
     # Dynamically create expanders
     for term, definition in zip(terms, definitions):
@@ -238,6 +244,8 @@ col1a, col2a, col3a = st.columns([4, 2, 4])
 # Input for the specific data (daily returns) to use in backtesting
 with col2a:
     backtest_for = st.selectbox("Backtest For", options=["total", "btc", "eth", "sol", "ethbtc", "solbtc", "soleth", "others.d"])
+    long_thre = st.number_input("Enter Long Threshold", value=0.0, step=0.01, format="%.2f")
+    short_thre = st.number_input("Enter Short Threshold", value=0.0, step=0.01, format="%.2f")
 
 # File upload widget (only accepts CSV files)
     uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
@@ -259,12 +267,13 @@ if backtest_trig:
             if 'tpi' in df.columns and 'date' in df.columns:
 
                 # Calculate and cache the equities
-                strategy_equity, buy_and_hold_equity = calculate_equities(daily_returns, df['tpi'])
+                strategy_equity, buy_and_hold_equity, long_only_equity = calculate_equities(daily_returns, df['tpi'], long_thre, short_thre)
 
                 # Function to plot the equity chart
                 def plot_equity_chart(yaxis_type='linear', title_suffix=''):
                     fig = go.Figure()
                     fig.add_trace(go.Scatter(x=df['date'], y=strategy_equity[1:], mode='lines', name='Strategy Equity'))
+                    fig.add_trace(go.Scatter(x=df['date'], y=long_only_equity[1:], mode='lines', name='Strategy Equity'))
                     fig.add_trace(go.Scatter(x=df['date'], y=buy_and_hold_equity[1:], mode='lines', name='Buy and Hold Equity'))
 
                     # Customize layout with adjustable y-axis type
@@ -283,14 +292,16 @@ if backtest_trig:
 
                 # Calculate metrics for both strategies and include alpha
                 bah_metrics = calculate_metrics(buy_and_hold_equity)
+                long_metrics = calculate_metrics(long_only_equity, benchmark_equity=buy_and_hold_equity)
                 strat_metrics = calculate_metrics(strategy_equity, benchmark_equity=buy_and_hold_equity)
 
                 # Create DataFrames for metrics
                 bah_df = pd.DataFrame.from_dict(bah_metrics, orient='index', columns=['Buy & Hold Metrics'])
+                long_df = pd.DataFrame.from_dict(long_metrics, orient='index', columns=['Long-Only Metrics'])
                 strat_df = pd.DataFrame.from_dict(strat_metrics, orient='index', columns=['Strategy Metrics'])
 
                 # Combine and display metrics
-                combined_metrics = pd.concat([bah_df, strat_df], axis=1)
+                combined_metrics = pd.concat([bah_df, long_df, strat_df], axis=1)
 
                 col1b, col2b = st.columns([1,1])
 
