@@ -273,7 +273,7 @@ if backtest_trig:
                 def plot_equity_chart(yaxis_type='linear', title_suffix=''):
                     fig = go.Figure()
                     fig.add_trace(go.Scatter(x=df['date'], y=strategy_equity[1:], mode='lines', name='Strategy Equity'))
-                    fig.add_trace(go.Scatter(x=df['date'], y=long_only_equity[1:], mode='lines', name='Strategy Equity'))
+                    fig.add_trace(go.Scatter(x=df['date'], y=long_only_equity[1:], mode='lines', name='Long-Only Equity'))
                     fig.add_trace(go.Scatter(x=df['date'], y=buy_and_hold_equity[1:], mode='lines', name='Buy and Hold Equity'))
 
                     # Customize layout with adjustable y-axis type
