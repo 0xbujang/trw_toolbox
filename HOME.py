@@ -24,11 +24,14 @@ Main Page</h1>
     , unsafe_allow_html=True
 )
 
-st.markdown("---")
 
 set_background()
 
-st.markdown(
+
+tab1, tab2 = st.tabs(["About", "Update Log"])
+
+with tab1:
+    st.markdown(
 """
 <p style='text-align: center; color: white;'>
 Welcome to The Real World Cryptocurrency Investing Campus Toolbox.
@@ -41,6 +44,15 @@ Any student of TRW is welcome to use anything they find useful, but this app is 
 </p>
 """
     , unsafe_allow_html=True
-)
+    )
+
+with tab2:
+    st.markdown(
+"""
+<p style='text-align: left; color: white;'>
+22/11/2024 | v1.0 | Added: None
+"""
+    , unsafe_allow_html=True
+    )
 
 st.sidebar.success("Select a page above")
