@@ -50,7 +50,7 @@ with tab2:
     st.markdown(
 """
 <p style='text-align: left; color: white;'>
-22/11/2024 | v1.0 | Added: None
+22/11/2024 | v1.0 | Added: TPI Backtest Tool Guide
 """
     , unsafe_allow_html=True
     )
