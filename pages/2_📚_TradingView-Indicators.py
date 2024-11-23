@@ -14,14 +14,14 @@ def set_background():
         </style>
         """, unsafe_allow_html=True)
 
-set_background()
-st.markdown("<h1 style='text-align: center; color: white;'>Andrej S. | InvestorUnknown's Toolbox</h1>", unsafe_allow_html=True)
+#set_background()
+st.markdown("<h1 style='text-align: center;'>Andrej S. | InvestorUnknown's Toolbox</h1>", unsafe_allow_html=True)
 
 st.write("---")
 
 st.markdown(
 """
-<p style='text-align: center; color: white;'>
+<p style='text-align: center;'>
 Below is the collection of Indicators I developed for you Gs, feel free to use any of them throughout your journey in Post IMC Levels.
 </p>
 """, unsafe_allow_html=True)
