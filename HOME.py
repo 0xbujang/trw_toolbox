@@ -14,11 +14,11 @@ st.set_page_config(
     layout = "wide"
 )
 
-set_background()
+#set_background()
 
 st.markdown(
 """
-<h1 style='text-align: center; color: white;'>
+<h1 style='text-align: center;'>
 Main Page</h1>
 """
     , unsafe_allow_html=True
@@ -33,7 +33,7 @@ tab1, tab2 = st.tabs(["About", "Update Log"])
 with tab1:
     st.markdown(
 """
-<p style='text-align: center; color: white;'>
+<p style='text-align: center;'>
 Welcome to The Real World Cryptocurrency Investing Campus Toolbox.
 <br>
 <br>
@@ -49,7 +49,7 @@ Any student of TRW is welcome to use anything they find useful, but this app is 
 with tab2:
     st.markdown(
 """
-<p style='text-align: left; color: white;'>
+<p style='text-align: left;'>
 22/11/2024 | v1.0 | Added: TPI Backtest Tool Guide
 """
     , unsafe_allow_html=True
