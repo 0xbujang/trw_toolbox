@@ -25,9 +25,6 @@ Main Page</h1>
 )
 
 
-set_background()
-
-
 tab1, tab2 = st.tabs(["About", "Update Log"])
 
 with tab1:
