@@ -53,15 +53,15 @@ st.set_page_config(
   page_title = "Crypto Breadth"
 )
 # create_header()
-set_background()
+#set_background()
 
 # Subtitle for the Crypto Breadth section
-st.markdown("<h1 style='text-align: center; color: white;'>Crypto Breadth</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Crypto Breadth</h1>", unsafe_allow_html=True)
 
 # Description of Crypto Breadth
 st.markdown(
     """
-    <p style='text-align: center; color: white;;'>
+    <p style='text-align: center;'>
         Market Breadth is a measure for strength in equities markets. 
         Crypto Breadth applies the Market Breadth formula for equities to 195 Altcoins. 
         1 indicates all coins are above the corresponding metrics, 
@@ -194,10 +194,10 @@ if True:  # Using True to always enter the block (could be removed for clarity)
 
 if not (option == "RSI"):
 
-    st.markdown("<h1 style='text-align: center; color: white;'>Breadth Difference</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Breadth Difference</h1>", unsafe_allow_html=True)
     st.markdown(
         """
-    <p style='text-align: center; color: white;'>
+    <p style='text-align: center;'>
         Breadth Difference is calculated as MA50 - MA200 (The type of MA depends on the choice in the select box above)
     </p>
         """,
@@ -292,10 +292,10 @@ if not (option == "RSI"):
 st.write("---")
 
 # Subtitle for the Robust Speculation Index section
-st.markdown("<h1 style='text-align: center; color: white;;'>Robust Speculation Index</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Robust Speculation Index</h1>", unsafe_allow_html=True)
 
 # Description of the Robust Speculation Index
-st.markdown("<p style='text-align: center; color: white;'>Robust Speculation Index is calculated as the percentage of altcoins with 75-day, 80-day, 85-day, 90-day, 95-day, 100-day, 105-day returns greater than Bitcoin. High readings suggest mounting speculation. Lower readings suggest capitulation, and potentially greater investment opportunities in altcoins. 1 = all periods have greater returns than BTC, 0 = not all periods have greater returns than BTC.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Robust Speculation Index is calculated as the percentage of altcoins with 75-day, 80-day, 85-day, 90-day, 95-day, 100-day, 105-day returns greater than Bitcoin. High readings suggest mounting speculation. Lower readings suggest capitulation, and potentially greater investment opportunities in altcoins. 1 = all periods have greater returns than BTC, 0 = not all periods have greater returns than BTC.</p>", unsafe_allow_html=True)
 
 if True:  # Using True to always enter the block (could be removed for clarity)
     try:
