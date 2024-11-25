@@ -65,6 +65,7 @@ L2.markdown("""
 * *[RBF Kijun Trend System](https://www.tradingview.com/script/KLKOA9hY-RBF-Kijun-Trend-System-InvestorUnknown/)*
 * *[TrigWave Suite](https://www.tradingview.com/script/V8FTemnA-TrigWave-Suite-InvestorUnknown/)* 
 * *[MA Ratio Weighted Trend System I](https://www.tradingview.com/script/7ARqNdTn-MA-Ratio-Weighted-Trend-System-I-InvestorUnknown/)*
+* *[MadTrend](https://www.tradingview.com/script/nhyCYGKn-MadTrend-InvestorUnknown/)*
 """)
 
 L3.markdown("""
