@@ -5,35 +5,11 @@ st.set_page_config(
     layout = "wide"
 )
 
-def set_background():
-    st.markdown("""
-        <style>
-        .stApp {
-            background-color: #1D2B3A;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-
-#set_background()
 st.markdown("<h1 style='text-align: center;'>Andrej S. | InvestorUnknown's Toolbox</h1>", unsafe_allow_html=True)
 
-st.write("---")
+Valuation, Tpi, Rsps, Other, Req = st.tabs(["Valuation", "TPI & Strat Dev", "RSPS", "Other", "Requests"]) 
 
-st.markdown(
-"""
-<p style='text-align: center;'>
-Below is the collection of Indicators I developed for you Gs, feel free to use any of them throughout your journey in Post IMC Levels.
-</p>
-""", unsafe_allow_html=True)
-
-st.write("---")
-
-L1 = st.expander(":chart_with_upwards_trend: Valuation")
-L2 = st.expander(":clock12: TPI & Strat-Dev")
-L3 = st.expander(":rocket: RSPS")
-ot = st.expander(":abacus: Other")
-
-L1.markdown("""
+Valuation.markdown("""
 * *[Bitcoin Automated Valuation System](https://www.tradingview.com/script/bVZ3grFX-Bitcoin-Automated-Valuation-System/)*
 * *[Sentix Data](https://www.tradingview.com/script/SdtltJSE-BTC-Sentix-Sentiment-Strategic-Bias-Z-Score/)*
 * *[Optimized AVIV](https://www.tradingview.com/script/02rBvPSy-AVIV-MVRV-Ratio-Z-Score-Optimized/)*
@@ -45,7 +21,7 @@ L1.markdown("""
 * *[Pi Cycle Top & Bottom Indicator](https://www.tradingview.com/script/UCKGuMlC-Pi-Cycle-Top-Bottom-Indicator-InvestorUnknown/)*
 """)
 
-L2.markdown("""
+Tpi.markdown("""
 * *[Enhanced LNL Trend System](https://www.tradingview.com/script/qm2mnC17-Enhanced-LNL-Trend-System/)*
 * *[Adaptive Trend Classification: Moving Averages](https://www.tradingview.com/script/L6NreqzB-Adaptive-Trend-Classification-Moving-Averages-InvestorUnknown/)*
 * *[DMI ForLoop](https://www.tradingview.com/script/aoadTINE-DMI-ForLoop-InvestorUnknown/)*    
@@ -70,12 +46,16 @@ L2.markdown("""
 * *[CauchyTrend](https://www.tradingview.com/script/XuPnhy3w-CauchyTrend-InvestorUnknown/)*
 """)
 
-L3.markdown("""
+Rsps.markdown("""
 * *[Universal Ratio Trend Matrix](https://www.tradingview.com/script/ZCHt0ScM-Universal-Ratio-Trend-Matrix-InvestorUnknown/)*
 """)
 
-ot.markdown("""
+Other.markdown("""
 * *[Central Banks Balance Sheet](https://www.tradingview.com/script/LENP1MRO-InvestorUnknown-Central-Banks-Balance-Sheet/)*
 * *[Performance Metrics](https://www.tradingview.com/script/wZzo5T6u-InvestorUnknown-Performance-Metrics/)*    
 * *[Asset Drawdown & Drawdown HeatMap](https://www.tradingview.com/script/BlxD6hb3-Asset-Drawdown-Drawdown-HeatMap-InvestorUnknown/)*
+""")
+
+Req.markdown("""
+Will be populated soon
 """)
