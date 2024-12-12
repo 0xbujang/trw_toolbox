@@ -1,20 +1,9 @@
 import streamlit as st
 
-def set_background():
-    st.markdown("""
-        <style>
-        .stApp {
-            background-color: #1D2B3A;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-
 st.set_page_config(
     page_title = "Home",
     layout = "wide"
 )
-
-#set_background()
 
 st.markdown(
 """
@@ -48,6 +37,7 @@ with tab2:
 """
 <p style='text-align: left;'>
 22/11/2024 | v1.0 | Added: TPI Backtest Tool Guide
+12/12/2024 | v1.1 | Added: Coding-Requests Page
 """
     , unsafe_allow_html=True
     )
