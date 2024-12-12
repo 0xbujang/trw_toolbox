@@ -27,7 +27,7 @@ datas = {'link': indicator_link}
 
 if st.button("Submit"):
     if "tradingview.com" in indicator_link.lower():
-        response = requests.post(url, data=datas))
+        response = requests.post(url, data=datas)
         st.success("Request sent successfully!")
         st.write("Response from server:", response)
     else:
