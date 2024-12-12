@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-url = "https://script.google.com/macros/s/AKfycbwGjnQozrFcGHyIhKq1j9brAPWBvJT1j6zZjlGOz-T2wANUHnQkNGczuhgdIKdNiRH3/exec"
+url = "https://script.google.com/macros/s/AKfycbxSVEVsqRe5hPs1juAsgRjBVac1Q1q2GiPtrdSTJ4wz7scVA6Vfo0M_HFNKJs2glOwD/exec"
 
 st.set_page_config(page_title="Coding Requests", layout="wide")
 
