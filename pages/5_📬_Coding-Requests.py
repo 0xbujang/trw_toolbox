@@ -4,7 +4,7 @@ import json
 
 def post_request(indicator_link):
     # Replace with your actual Google Apps Script Web App URL
-    url = "https://script.google.com/macros/s/AKfycbyNXle6N8GM68aYwm7ZnyQvyRKm3HLzbLkBibUiRR0iHYVD_qU_tBBjktZnozOaHgt8/exec"
+    url = "https://script.google.com/macros/s/AKfycbwKGwSXJXwbg9VgsD53WOEwenOnXSe9famClXZld6voYveRw3igzuhW1-Z1qtteV-5M/exec"
     payload = {"link": indicator_link}
     headers = {"Content-Type": "application/json"}
     # Convert payload to JSON string and send with data parameter
