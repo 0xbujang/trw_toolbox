@@ -36,3 +36,4 @@ if st.button("Submit"):
         st.write("Response from server:", response)
     else:
         st.warning("Please enter a valid TradingView Indicator link containing 'tradingview.com'.")
+
