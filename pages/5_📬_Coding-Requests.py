@@ -1,15 +1,7 @@
 import streamlit as st
 import requests
-import json
 
-def post_request(indicator_link):
-    # Replace with your actual Google Apps Script Web App URL
-    url = "https://script.google.com/macros/s/AKfycbwKGwSXJXwbg9VgsD53WOEwenOnXSe9famClXZld6voYveRw3igzuhW1-Z1qtteV-5M/exec"
-    payload = {"link": indicator_link}
-    headers = {"Content-Type": "application/json"}
-    # Convert payload to JSON string and send with data parameter
-    response = requests.post(url, headers=headers, data=json.dumps(payload))
-    return response.text
+url = "https://script.google.com/macros/s/AKfycbwKGwSXJXwbg9VgsD53WOEwenOnXSe9famClXZld6voYveRw3igzuhW1-Z1qtteV-5M/exec"
 
 st.set_page_config(page_title="Coding Requests", layout="wide")
 
@@ -31,9 +23,11 @@ st.markdown("<h2>TradingView Indicator Submission</h2>", unsafe_allow_html=True)
 
 indicator_link = st.text_input("TradingView Indicator link:")
 
+datas = {'link': indicator_link}
+
 if st.button("Submit"):
     if "tradingview.com" in indicator_link.lower():
-        response = post_request(indicator_link)
+        response = requests.post(url, data=datas))
         st.success("Request sent successfully!")
         st.write("Response from server:", response)
     else:
