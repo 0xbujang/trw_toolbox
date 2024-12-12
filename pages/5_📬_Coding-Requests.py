@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-url = "https://script.google.com/macros/s/AKfycbxdjza06nB8heVv5CBkMPOXDacwJn5BwpgzM0pHJuZMBXC-5sTsWiIJieOxJjMrnNw/exec"
+url = "https://script.google.com/macros/s/AKfycbz0h66_RL1U1sEMLgbatnX_t5jKq0LUDdGufubyCdQSSh-oyPXsiTyyeG1sAe5F95ZP/exec"
 
 st.set_page_config(page_title="Coding Requests", layout="wide")
 
@@ -23,12 +23,22 @@ st.markdown("<h2>TradingView Indicator Submission</h2>", unsafe_allow_html=True)
 
 indicator_link = st.text_input("TradingView Indicator link:")
 
-datas = {'link': indicator_link}
-
 if st.button("Submit"):
     if "tradingview.com" in indicator_link.lower():
-        response = requests.post(url, data=datas)
-        st.success("Request sent successfully!")
-        st.write("Response from server:", response)
+        try:
+            # Send the raw link as the POST body with 'text/plain' content type
+            headers = {'Content-Type': 'text/plain'}
+            response = requests.post(url, data=indicator_link, headers=headers)
+            
+            if response.status_code == 200:
+                result = response.json()
+                if result.get("success"):
+                    st.success(result.get("message"))
+                else:
+                    st.warning(result.get("message"))
+            else:
+                st.error(f"Server returned status code {response.status_code}")
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
     else:
         st.warning("Please enter a valid TradingView Indicator link containing 'tradingview.com'.")
