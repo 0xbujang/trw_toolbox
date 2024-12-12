@@ -3,7 +3,7 @@ import requests
 
 def post_request(indicator_link):
     # Replace with your actual Google Apps Script Web App URL
-    url = "https://script.google.com/macros/s/AKfycbxsxoCpYtdsQYRvPw6sIw8v5E1J0GWk8Uo56pk3946iHcjkiLdHCzCpdzN6BZotH5-b/exec"
+    url = "https://script.google.com/macros/s/AKfycbyNXle6N8GM68aYwm7ZnyQvyRKm3HLzbLkBibUiRR0iHYVD_qU_tBBjktZnozOaHgt8/exec"
     payload = {"link": indicator_link}
     response = requests.post(url, json=payload)
     return response.text
