@@ -36,7 +36,7 @@ with tab2:
     st.markdown(
 """
 <p style='text-align: left;'>
-22/11/2024 | v1.0 | Added: TPI Backtest Tool Guide
+22/11/2024 | v1.0 | Added: TPI Backtest Tool Guide<br>
 12/12/2024 | v1.1 | Added: Coding-Requests Page
 """
     , unsafe_allow_html=True
