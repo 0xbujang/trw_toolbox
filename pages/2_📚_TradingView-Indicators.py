@@ -44,6 +44,7 @@ Tpi.markdown("""
 * *[MadTrend](https://www.tradingview.com/script/nhyCYGKn-MadTrend-InvestorUnknown/)*
 * *[AadTrend](https://www.tradingview.com/script/cIyhGm6c-AadTrend-InvestorUnknown/)*
 * *[CauchyTrend](https://www.tradingview.com/script/XuPnhy3w-CauchyTrend-InvestorUnknown/)*
+* *[Median Deviation Suite](https://www.tradingview.com/script/jhoPkiLx-Median-Deviation-Suite-InvestorUnknown/)*
 """)
 
 Rsps.markdown("""
