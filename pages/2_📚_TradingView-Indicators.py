@@ -58,5 +58,6 @@ Other.markdown("""
 """)
 
 Req.markdown("""
-Will be populated soon
+* *[Normalized KAMA Oscillator | IkkeOmar](https://www.tradingview.com/script/6G8VDt6p-Normalized-KAMA-Oscillator-IkkeOmar-BLv2/)* 
+* *[Squeeze Momentum Indicator](https://www.tradingview.com/script/IDOs0ebZ-Squeeze-Momentum-Indicator-LazyBear-BLv2/)* 
 """)
