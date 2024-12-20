@@ -58,6 +58,12 @@ Other.markdown("""
 """)
 
 Req.markdown("""
+<p>To use the backesting tool, open the indicator settings and change the "Display Mode" setting to "Backtest Mode".</p>
+""", unsafe_allow_html=True)
+
+Req.markdown("""
 * *[Normalized KAMA Oscillator | IkkeOmar](https://www.tradingview.com/script/6G8VDt6p-Normalized-KAMA-Oscillator-IkkeOmar-BLv2/)* 
 * *[Squeeze Momentum Indicator](https://www.tradingview.com/script/IDOs0ebZ-Squeeze-Momentum-Indicator-LazyBear-BLv2/)* 
+* *[White Noise | IkkeOmar](https://www.tradingview.com/script/X6mTqEEG-White-Noise-IkkeOmar-BLv2/)* 
+* *[Trend Magic](https://www.tradingview.com/script/vGiPMppS-Trend-Magic-BLv2/)* 
 """)
