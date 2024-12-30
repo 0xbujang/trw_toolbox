@@ -45,6 +45,7 @@ Tpi.markdown("""
 * *[AadTrend](https://www.tradingview.com/script/cIyhGm6c-AadTrend-InvestorUnknown/)*
 * *[CauchyTrend](https://www.tradingview.com/script/XuPnhy3w-CauchyTrend-InvestorUnknown/)*
 * *[Median Deviation Suite](https://www.tradingview.com/script/jhoPkiLx-Median-Deviation-Suite-InvestorUnknown/)*
+* *[MA Deviation Suite](https://www.tradingview.com/script/sQvuyIT1-MA-Deviation-Suite-InvestorUnknown/)*
 """)
 
 Rsps.markdown("""
@@ -55,6 +56,7 @@ Other.markdown("""
 * *[Central Banks Balance Sheet](https://www.tradingview.com/script/LENP1MRO-InvestorUnknown-Central-Banks-Balance-Sheet/)*
 * *[Performance Metrics](https://www.tradingview.com/script/wZzo5T6u-InvestorUnknown-Performance-Metrics/)*    
 * *[Asset Drawdown & Drawdown HeatMap](https://www.tradingview.com/script/BlxD6hb3-Asset-Drawdown-Drawdown-HeatMap-InvestorUnknown/)*
+* *[SMA Trend Spectrum](https://www.tradingview.com/script/vgnEQWlK-SMA-Trend-Spectrum-InvestorUnknown/)*
 """)
 
 Req.markdown("""
