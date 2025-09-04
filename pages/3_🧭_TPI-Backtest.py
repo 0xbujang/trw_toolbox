@@ -8,7 +8,7 @@ import requests
 
 # Layout
 st.set_page_config(
-    page_title = "TPI Backtest",
+    page_title = "Trend Direction System - Backtest",
     layout = "wide"
 )
 
@@ -212,17 +212,17 @@ def display_metric_explanations():
 ### FUNCTIONS ###
 
 # Title of the dashboard
-st.markdown("<h1 style='text-align: center;'>TPI Backtesting Tool</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Trend Direction System - Backtesting Tool</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
-st.markdown("<p style='text-align: center;'><strong>No coding required!</strong> A TPI Backtester for students who don't know how to code but want to evaluate the quality of their TPIs.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'><strong>No coding required!</strong> A Trend Direction System - Backtester for students who don't know how to code but want to evaluate the quality of their TPIs.</p>", unsafe_allow_html=True)
 
 st.markdown("---")
 
 col1, col2, col3, = st.columns([3,2,3])
 
 with col2:
-    with st.expander("How to Perform TPI Backtest"):
+    with st.expander("How to Perform Trend Direction System - Backtest"):
         st.markdown("[Google Doc Guide](https://docs.google.com/document/d/1dS9DTpmEEEeRbB_52zNhCG4EPwN9bedv3R_-P8cA6d4/edit?usp=sharing)")
     
 
