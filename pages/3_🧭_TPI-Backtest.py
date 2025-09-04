@@ -223,7 +223,7 @@ col1, col2, col3, = st.columns([3,2,3])
 
 with col2:
     with st.expander("How to Perform TPI Backtest"):
-        st.markdown("[Google Doc Guide](https://docs.google.com/document/d/1ULIxQVULoXmIB_skCOJq8_NVDdQN8Bh9ZIZi5fdHVR8/edit?usp=sharing)")
+        st.markdown("[Google Doc Guide](https://docs.google.com/document/d/1dS9DTpmEEEeRbB_52zNhCG4EPwN9bedv3R_-P8cA6d4/edit?usp=sharing)")
     
 
 # Input for the sheet name
